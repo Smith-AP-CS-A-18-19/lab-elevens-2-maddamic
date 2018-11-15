@@ -8,10 +8,12 @@ import java.util.ArrayList;
  */
 public class Deck {
 
+
 	/**
 	 * cards contains all the cards in the deck.
 	 */
 	private List<Card> cards;
+
 
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -30,32 +32,52 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		cards = new Card[ranks.size * suits.length];
+		int rank = 0;
+		int suit = 0;
+		for (int i = 0; i < cards.length; i ++) {
+			Card card = new Card(ranks[rank], suits[suitIndex], values[rankIndex]);
+			cards[i] = card;
+			rank Index = (rankIndex + 1) % ranks.length;
+			// This says if it is equal, then it will be set back to zero.
+				if (rankIndex == 0) {
+					suitIndex++;
+				}
+		}
 	}
-
 
 	/**
 	 * Determines if this deck is empty (no undealt cards).
 	 * @return true if this deck is empty, false otherwise.
 	 */
+	/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 	public boolean isEmpty() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		if (size == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
 	 * Accesses the number of undealt cards in this deck.
 	 * @return the number of undealt cards in this deck.
 	 */
+	 /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 	public int size() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		return size;
 	}
 
 	/**
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
+	 /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		for (int i = 0; i < card.length; i ++) {
+			i = (int) (Math.random() * Deck.length);
+			card[i] = i;
+		}
 	}
 
 	/**
@@ -63,8 +85,10 @@ public class Deck {
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
+	 /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 	public Card deal() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		Deck.length = Deck.length - 1;
+		return cards[size];
 	}
 
 	/**

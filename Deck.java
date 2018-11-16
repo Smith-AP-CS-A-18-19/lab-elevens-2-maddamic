@@ -32,13 +32,15 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-		cards = new Card[ranks.size * suits.length];
-		int rank = 0;
-		int suit = 0;
+		cards = new Card[ranks.length * suits.length];
+		size = cards.length;
+		int rankIndex = 0;
+		int suitIndex = 0;
+		int valueIndex = 0;
 		for (int i = 0; i < cards.length; i ++) {
-			Card card = new Card(ranks[rank], suits[suitIndex], values[rankIndex]);
+			Card card = new Card(ranks[rankIndex], suits[suitIndex], values[rankIndex]);
 			cards[i] = card;
-			rank Index = (rankIndex + 1) % ranks.length;
+			rankIndex = (rankIndex + 1) % ranks.length;
 			// This says if it is equal, then it will be set back to zero.
 				if (rankIndex == 0) {
 					suitIndex++;
@@ -73,12 +75,12 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	 /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-	public void shuffle() {
-		for (int i = 0; i < card.length; i ++) {
-			i = (int) (Math.random() * Deck.length);
-			card[i] = i;
-		}
-	}
+	// public void shuffle() {
+	// 	for (int i = 0; i < card.length; i ++) {
+	// 		i = (int) (Math.random() * Deck.length);
+	// 		card[i] = i;
+	// 	}
+	// }
 
 	/**
 	 * Deals a card from this deck.
@@ -87,8 +89,8 @@ public class Deck {
 	 */
 	 /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 	public Card deal() {
-		Deck.length = Deck.length - 1;
-		return cards[size];
+		size = size - 1;
+		return size;
 	}
 
 	/**

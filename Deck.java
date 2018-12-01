@@ -22,7 +22,6 @@ public class Deck {
 	 */
 	private int size;
 
-
 	/**
 	 * Creates a new <code>Deck</code> instance.<BR>
 	 * It pairs each element of ranks with each element of suits,

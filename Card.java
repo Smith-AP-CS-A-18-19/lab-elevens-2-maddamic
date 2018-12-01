@@ -21,6 +21,7 @@ public class Card {
 	private int pointValue;
 
 
+
    /**
 	 * Creates a new <code>Card</code> instance.
 	 *

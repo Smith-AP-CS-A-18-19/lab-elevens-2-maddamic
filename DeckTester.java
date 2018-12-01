@@ -18,4 +18,5 @@
  		System.out.println(deck1.size());
  		System.out.println(deck1.deal());
 
- 	}}
+ 	}
+}
